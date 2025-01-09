@@ -31,6 +31,7 @@
         color: hsl(228, 45%, 44%);
       }
     </style>
+    <script src="script.js" defer></script>
   </head>
   <body>
     <container>
@@ -38,9 +39,11 @@
         <div class="date-input">
           <label class="label">DAY</label>
           <input type="number" class="day" placeholder="DD" min="1" max="31" />
+          <span class="error-message"></span>
         </div>
         <div class="date-input">
           <label class="label">MONTH</label>
+          
           <input
             type="number"
             class="month"
@@ -48,9 +51,10 @@
             min="1"
             max="12"
           />
+          <span class="error-message">This field is required</span>
         </div>
         <div class="date-input">
-          <label class="label">YEAR</label>
+          <label class="label" for="year">YEAR</label>
           <input
             type="number"
             class="year"
@@ -58,6 +62,7 @@
             min="1900"
             max="2099"
           />
+          <span class="error-message">This field is required</span>
         </div>
       </div>
       <div class="line">
@@ -67,16 +72,26 @@
             src="assets/images/icon-arrow.svg"
             alt="Calculate Age"
             id="calculate-btn"
+            onclick="calculateAge()"
           />
         </div>
       </div>
 
       <div class="response-part">
-        <div id="age-years">-- years</div>
-        <div id="age-months">-- months</div>
-        <div id="age-days">-- days</div>
+        <div class="response-item">
+          <span id="response-years">--</span>
+          <span class="default-text"> years</span> 
+        </div>
+        <div class="response-item">
+          <span id="response-months">--</span>
+          <span class="default-text"> months</span> 
+        </div>
+        <div class="response-item">
+          <span id="response-days">--</span>
+          <span class="default-text"> days</span> 
+        </div>
       </div>
-    </container>
+      
 
     <div class="attribution">
       Challenge by
